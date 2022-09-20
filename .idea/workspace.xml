@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b5228cf-bc10-49d6-827c-4debdac27908" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../FindingIdealTypeApp" beforeDir="false" afterPath="$PROJECT_DIR$/../FindingIdealTypeApp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FindingIdealTypeApp.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MbtiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MbtiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rds.rtf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serverKey.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../엑세스키.rtf" beforeDir="false" />
-    </list>
+    <list default="true" id="3b5228cf-bc10-49d6-827c-4debdac27908" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,17 +35,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/jojunhui/Desktop/Project/MbtiProject",
-    "spring.configuration.checksum": "f946302efcfac201544d96fdac4abd3b"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jojunhui/Desktop/Project/MbtiProject&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f946302efcfac201544d96fdac4abd3b&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/asdads" />
@@ -78,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663590293198</updated>
       <workItem from="1663590297006" duration="538000" />
+      <workItem from="1663593501512" duration="10000" />
     </task>
     <servers />
   </component>
