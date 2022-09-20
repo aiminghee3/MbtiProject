@@ -8,6 +8,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI 첫인상 테스트</title>
+
+    <script type="text/javascript">
+        function uploadImgPreview() {
+            // @breif 업로드 파일 읽기
+            let fileInfo = document.getElementById("upImgFile").files[0];
+            let reader = new FileReader();
+    
+            // @details readAsDataURL( )을 통해 파일을 읽어 들일때 onload가 실행
+            reader.onload = function() {
+                // @details 파일의 URL을 Base64 형태로 가져온다.
+                document.getElementById("thumbnailImg").src = reader.result; // 이미지 화면에 보여줌
+            };
+            // @details onload 대신 addEventListener( ) 사용가능
+            // reader.addEventListener("load", function() {
+            //    document.getElementById("thumbnailImg").src = reader.result;
+            //    document.getElementById("thumbnailUrl").innerText = reader.result;
+            // }, false);
+    
+            if( fileInfo ) {
+                // @details readAsDataURL( )을 통해 파일의 URL을 읽어온다.
+                reader.readAsDataURL( fileInfo );
+            }
+        }
+    </script>
 </head>
 <body>
     <!--bootstrap-->
@@ -24,10 +48,19 @@
 
     <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
-
+<button type="button" onclick="predict()">예측</button>
 <div class = "title">인공지능 MBTI 첫인상 테스트</div>
 <div class = "subtitle">내 첫인상은 어떤 MBTI같을까?</div>
-<img src="./my_model/imageUpload.png">
+
+<!--이미지 업로드-->
+
+<!-- Upload  -->
+<div class="drop-zone" id = "face-image">
+    <span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>
+    <input type="file" name="myFile" class="drop-zone__input">
+  </div>
+<script src="./upload.js"></script>
+<!--이미지 업로드-->
 
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -56,29 +89,19 @@
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
 
         // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
     }
 
-    async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
-    }
-
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
+        var image = document.getElementById("face-image");
+        const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
@@ -86,6 +109,14 @@
         }
     }
 </script>
-
 </body>
+<!--
+Copyright (c) 2022 by Matt  (https://codepen.io/uixmat/pen/yadZXv)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
 </html>
