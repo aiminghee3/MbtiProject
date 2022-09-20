@@ -1,0 +1,25 @@
+@charset "utf-8";
+.navbar-brand{
+    color: black;
+    font-size: 150%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.bg-light{
+    background-color: #ffffff;
+}
+.title{
+    text-align: center;
+    font-size: 200%;
+    margin-top: 3%;
+}
+.subtitle{
+    text-align: center;
+    font-size: 150%;
+    margin-top: 3%;
+}
+@media screen and (max-width: 600px) {
+    html{
+        font-size : 10px;
+    }
+  }
