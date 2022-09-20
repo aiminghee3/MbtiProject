@@ -53,12 +53,11 @@
 <div class = "subtitle">내 첫인상은 어떤 MBTI같을까?</div>
 
 <!--이미지 업로드-->
-
 <!-- Upload  -->
-<div class="drop-zone" id = "face-image">
+<div class="drop-zone">
     <span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>
     <input type="file" name="myFile" class="drop-zone__input">
-  </div>
+</div>
 <script src="./upload.js"></script>
 <!--이미지 업로드-->
 
@@ -100,7 +99,7 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        var image = document.getElementById("face-image");
+        var image = document.getElementById("drop-zone__thumb");
         const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
