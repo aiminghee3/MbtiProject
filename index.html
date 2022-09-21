@@ -139,7 +139,6 @@
        */
       function updateThumbnail(dropZoneElement, file) {
         thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-        image = thumbnailElement;
 
         // First time - remove the prompt
         if (dropZoneElement.querySelector(".drop-zone__prompt")) {
@@ -151,6 +150,7 @@
           thumbnailElement = document.createElement("div");
           thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
+          image = thumbnailElement;
         }
       
         thumbnailElement.dataset.label = file.name;
