@@ -171,7 +171,7 @@
         // predict can take in an image, video or canvas html element
         var image = document.querySelector(".drop-zone__thumb");
 
-        const prediction = await model.predict(file, false);
+        const prediction = await model.predict(thumbnailElement.style.backgroundImage, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
