@@ -70,7 +70,6 @@
 <script type="text/javascript">
     
     let thumbnailElement;
-    var image = new Image;
 
     document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         const dropZoneElement = inputElement.closest(".drop-zone");
@@ -145,7 +144,6 @@
         //console.log(thumbnailElement);
         console.log(dropZoneElement);
         console.log(file.type);
-        image = file.type;
         //console.log(thumbnailElement.style.backgroundImage);
         
       }
@@ -180,7 +178,7 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         var image = document.getElementById("profileImage");
-
+        console.log(image);
 
         const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
