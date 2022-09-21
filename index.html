@@ -63,6 +63,84 @@
 -->
 <script>
     document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+    const dropZoneElement = inputElement.closest(".drop-zone");
+  
+    dropZoneElement.addEventListener("click", (e) => {
+      inputElement.click();
+    });
+  
+    inputElement.addEventListener("change", (e) => {
+      if (inputElement.files.length) {
+        updateThumbnail(dropZoneElement, inputElement.files[0]);
+      }
+    });
+  
+    dropZoneElement.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZoneElement.classList.add("drop-zone--over");
+    });
+  
+    ["dragleave", "dragend"].forEach((type) => {
+      dropZoneElement.addEventListener(type, (e) => {
+        dropZoneElement.classList.remove("drop-zone--over");
+      });
+    });
+  
+    dropZoneElement.addEventListener("drop", (e) => {
+      e.preventDefault();
+  
+      if (e.dataTransfer.files.length) {
+        inputElement.files = e.dataTransfer.files;
+        updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      }
+  
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+  
+  /**
+   * Updates the thumbnail on a drop zone element.
+   *
+   * @param {HTMLElement} dropZoneElement
+   * @param {File} file
+   */
+  function updateThumbnail(dropZoneElement, file) {
+    let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+  
+    // First time - remove the prompt
+    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+      dropZoneElement.querySelector(".drop-zone__prompt").remove();
+    }
+  
+    // First time - there is no thumbnail element, so lets create it
+    if (!thumbnailElement) {
+      thumbnailElement = document.createElement("div");
+      thumbnailElement.classList.add("drop-zone__thumb");
+      dropZoneElement.appendChild(thumbnailElement);
+    }
+  
+    thumbnailElement.dataset.label = file.name;
+  
+    // Show thumbnail for image files
+    if (file.type.startsWith("image/")) {
+      const reader = new FileReader();
+  
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+      };
+    } else {
+      thumbnailElement.style.backgroundImage = null;
+    }
+  }
+</script>
+<!--이미지 업로드-->
+
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         const dropZoneElement = inputElement.closest(".drop-zone");
       
         dropZoneElement.addEventListener("click", (e) => {
@@ -132,14 +210,6 @@
         } else {
           thumbnailElement.style.backgroundImage = null;
         }
-      }
-</script>
-<!--이미지 업로드-->
-
-<div id="label-container"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-<script type="text/javascript">
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
@@ -169,9 +239,8 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        // var image = document.getElementById("drop-zone__thumb");
-        let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-        var image = thumbnailElement;
+         var image = document.getElementById("drop-zone__thumb");
+        // var image = 
         const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
@@ -179,8 +248,10 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
+}
 </script>
 </body>
+
 <!--
 Copyright (c) 2022 by Matt  (https://codepen.io/uixmat/pen/yadZXv)
 
