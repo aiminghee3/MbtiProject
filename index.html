@@ -55,9 +55,9 @@
 <!--이미지 업로드-->
 <!-- Upload  -->
 <div class="drop-zone">
-    <!--<span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>-->
+    <span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>
     <input type="file" name="myFile" class="drop-zone__input">
-    <div class="drop-zone__thumb" id="profileImage">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</div>
+    <img id = imageUpload src = "">
 </div>
 <!--
     <script src="./upload.js"></script>
@@ -70,6 +70,7 @@
 <script type="text/javascript">
     
     let thumbnailElement;
+    var image;
 
     document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         const dropZoneElement = inputElement.closest(".drop-zone");
@@ -113,18 +114,18 @@
        * @param {HTMLElement} dropZoneElement
        * @param {File} file
        */
-      function updateThumbnail(dropZoneElement, file) {
-        thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+       function updateThumbnail(dropZoneElement, file) {
+        let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
    
-        // First time - remove the prompt
-        if (dropZoneElement.querySelector("drop-zone__thumb")) {
-          dropZoneElement.querySelector("drop-zone__thumb").remove();
+         // First time - remove the prompt
+        if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+            dropZoneElement.querySelector(".drop-zone__prompt").remove();
         }
       
         // First time - there is no thumbnail element, so lets create it
         if (!thumbnailElement) {
           thumbnailElement = document.createElement("div");
-          //thumbnailElement.classList.add("drop-zone__thumb");
+          thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
         }
       
@@ -134,7 +135,8 @@
       
           reader.readAsDataURL(file);
           reader.onload = () => {
-            thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+            //thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+            image = reader.result;
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
@@ -147,6 +149,7 @@
         //console.log(thumbnailElement.style.backgroundImage);
         
       }
+      
 
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
@@ -177,9 +180,10 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        var image = document.getElementById("profileImage");
+        //var image = document.getElementById("profileImage");
+        
         console.log(image);
-
+        imageUpload.src = image;
         const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
