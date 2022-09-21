@@ -71,7 +71,6 @@
     
     let thumbnailElement;
     var image;
-    
 
     document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         const dropZoneElement = inputElement.closest(".drop-zone");
@@ -183,7 +182,7 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         
-        //imageUpload.src = image;
+        imageUpload.src = image;
         console.log(imageUpload.src);
         console.log(document.getElementById("imageUpload"));
         var upload = document.getElementById("imageUpload");
