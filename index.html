@@ -170,7 +170,7 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         // var image = document.getElementById("drop-zone__thumb");
-        var image = dropZoneElement;
+        var image = thumbnailElement;
         const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
