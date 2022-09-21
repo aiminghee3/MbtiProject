@@ -169,7 +169,7 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        var image = document.getElementsByClassname(".drop-zone__thumb")[0];
+        var image = document.querySelector(".drop-zone__thumb");
 
         const prediction = await model.predict(image, false);
         for (let i = 0; i < maxPredictions; i++) {
