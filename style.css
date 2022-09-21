@@ -67,9 +67,12 @@
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #cccccc;
+    background-color: #ffffff;
     background-size: cover;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .drop-zone__thumb::after {

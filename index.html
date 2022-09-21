@@ -55,8 +55,9 @@
 <!--이미지 업로드-->
 <!-- Upload  -->
 <div class="drop-zone">
-    <span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>
+    <!--<span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>-->
     <input type="file" name="myFile" class="drop-zone__input">
+    <div class="drop-zone__thumb" id="profileImage">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</div>
 </div>
 <!--
     <script src="./upload.js"></script>
@@ -117,14 +118,14 @@
         thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
    
         // First time - remove the prompt
-        if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-          dropZoneElement.querySelector(".drop-zone__prompt").remove();
+        if (dropZoneElement.querySelector("drop-zone__thumb")) {
+          dropZoneElement.querySelector("drop-zone__thumb").remove();
         }
       
         // First time - there is no thumbnail element, so lets create it
         if (!thumbnailElement) {
           thumbnailElement = document.createElement("div");
-          thumbnailElement.classList.add("drop-zone__thumb");
+          //thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
         }
       
@@ -178,7 +179,7 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        //var image = document.querySelector(".drop-zone__thumb");
+        var image = document.getElementById("profileImage");
 
 
         const prediction = await model.predict(image, false);
