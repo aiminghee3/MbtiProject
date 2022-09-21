@@ -170,8 +170,11 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         var image = document.querySelector(".drop-zone__thumb");
+        const canvas = thumbnailElement.style.backgroundImage;
+        const ctx = canvas.getContext('2d');
+        ctx.canvas // HTMLCanvasElement
 
-        const prediction = await model.predict(thumbnailElement.style.backgroundImage, false);
+        const prediction = await model.predict(ctx.canvas, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
