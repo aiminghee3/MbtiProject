@@ -71,6 +71,7 @@
     
     let thumbnailElement;
     var image;
+    
 
     document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         const dropZoneElement = inputElement.closest(".drop-zone");
@@ -137,6 +138,7 @@
           reader.onload = () => {
             //thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
             image = reader.result;
+            imageUpload.src = image;
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
@@ -180,14 +182,12 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        //var image = document.getElementById("profileImage");
         
-        imageUpload.src = image;
+        //imageUpload.src = image;
         console.log(imageUpload.src);
         console.log(document.getElementById("imageUpload"));
         var upload = document.getElementById("imageUpload");
-        var test = "./my_model/imageUpload";
-        const prediction = await model.predict(test, false);
+        const prediction = await model.predict(upload, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
