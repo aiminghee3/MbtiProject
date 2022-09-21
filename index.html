@@ -135,17 +135,17 @@
           reader.readAsDataURL(file);
           reader.onload = () => {
             thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-            image = `url('${reader.result}')`;
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
         }
 
         thumbnailElement.dataset.label = file.name;
-        console.log(thumbnailElement);
+        //console.log(thumbnailElement);
         console.log(dropZoneElement);
         console.log(file);
-        console.log(thumbnailElement.style.backgroundImage);
+        console.log(HTMLImageElement.getTotalClasses(".drop-zone__thumb"));
+        //console.log(thumbnailElement.style.backgroundImage);
         
       }
 
