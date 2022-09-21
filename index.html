@@ -80,7 +80,6 @@
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
         let thumbnailElement;
-        var image;
 
         // load the model and metadata
         // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
@@ -139,7 +138,7 @@
        */
       function updateThumbnail(dropZoneElement, file) {
         thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-
+   
         // First time - remove the prompt
         if (dropZoneElement.querySelector(".drop-zone__prompt")) {
           dropZoneElement.querySelector(".drop-zone__prompt").remove();
@@ -150,7 +149,6 @@
           thumbnailElement = document.createElement("div");
           thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
-          image = thumbnailElement;
         }
       
         thumbnailElement.dataset.label = file.name;
@@ -171,9 +169,9 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        // var image = document.querySelector(".drop-zone__thumb");
+        var image = document.querySelector(".drop-zone__thumb");
 
-        const prediction = await model.predict(image, false);
+        const prediction = await model.predict(file, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
