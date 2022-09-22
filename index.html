@@ -57,7 +57,7 @@
 <div class="drop-zone">
     <span class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</span>
     <input type="file" name="myFile" class="drop-zone__input">
-    <img id = imageUpload src = "">
+    <!-- <img id = imageUpload src = ""> -->
 </div>
 <!--
     <script src="./upload.js"></script>
@@ -124,7 +124,7 @@
       
         // First time - there is no thumbnail element, so lets create it
         if (!thumbnailElement) {
-          thumbnailElement = document.createElement("div");
+          thumbnailElement = document.createElement("img");
           thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
         }
@@ -137,18 +137,15 @@
           reader.onload = () => {
             //thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
             image = reader.result;
-            imageUpload.src = image;
+            //imageUpload.src = image;
+            thumbnailElement.id = "test";
+            test.src = image;
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
         }
 
         thumbnailElement.dataset.label = file.name;
-        //console.log(thumbnailElement);
-        console.log(dropZoneElement);
-        console.log(file.type);
-        //console.log(thumbnailElement.style.backgroundImage);
-        
       }
       
 
@@ -182,10 +179,8 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         
-        imageUpload.src = image;
-        console.log(imageUpload.src);
-        console.log(document.getElementById("imageUpload"));
-        var upload = document.getElementById("imageUpload");
+        //imageUpload.src = image;
+        var upload = document.getElementById("test");
         const prediction = await model.predict(upload, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
