@@ -68,9 +68,17 @@
         // append elements to the DOM
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
+            var max;
+            if(i == 0) {
+              max = maxPredicetions;
+            }
+            if(max < maxPredictions){
+              max = maxPredictions;
+              labelContainer.appendChild(document.createElement("div"));
+            }
+            console.log(maxPredictions);
+            //labelContainer.appendChild(document.createElement("div"));
         }
-        //predict(); // 예측
     }
 
     // run the webcam image through the image model
