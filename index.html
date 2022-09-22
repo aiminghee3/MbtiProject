@@ -77,10 +77,10 @@
         // predict can take in an image, video or canvas html element
         var upload = document.getElementById("imageUpload");
         const prediction = await model.predict(upload, false);
-        console.log(prediction);
-        // prediction.sort((a,b) => parseFloat(b.probability) = parseFloat(a.probability));
+         prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
+              console.log(prediction[i]);
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
