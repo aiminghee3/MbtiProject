@@ -93,7 +93,6 @@
        */
        function updateThumbnail(dropZoneElement, file) {
         init();
-        predict();
         let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
    
          // First time - remove the prompt
@@ -106,6 +105,7 @@
           thumbnailElement = document.createElement("img");
           thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
+          predict();
         }
       
         // Show thumbnail for image files
