@@ -180,6 +180,7 @@
         // predict can take in an image, video or canvas html element
         
         //imageUpload.src = image;
+        test.src = image;
         var upload = document.getElementById("test");
         const prediction = await model.predict(upload, false);
         for (let i = 0; i < maxPredictions; i++) {
