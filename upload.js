@@ -43,7 +43,7 @@ let thumbnailElement;
        * @param {File} file
        */
        function updateThumbnail(dropZoneElement, file) {
-        init().then(()=>{
+        init().then((fonction)=>{
           predict();
         });
         let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
