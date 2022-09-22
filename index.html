@@ -51,6 +51,8 @@
     var image;
 
     document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+        init();
+        predict();
         const dropZoneElement = inputElement.closest(".drop-zone");
       
         dropZoneElement.addEventListener("click", (e) => {
@@ -92,8 +94,6 @@
        * @param {File} file
        */
        function updateThumbnail(dropZoneElement, file) {
-        init();
-        predict();
         let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
    
          // First time - remove the prompt
