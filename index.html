@@ -103,7 +103,6 @@
             inputElement.files = e.dataTransfer.files;
             updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
           }
-      
           dropZoneElement.classList.remove("drop-zone--over");
         });
       });
@@ -132,14 +131,12 @@
         // Show thumbnail for image files
         if (file.type.startsWith("image/")) {
           const reader = new FileReader();
-      
           reader.readAsDataURL(file);
           reader.onload = () => {
             //thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
             image = reader.result;
-            //imageUpload.src = image;
-            thumbnailElement.id = "test";
-            test.src = image;
+            thumbnailElement.id = "imageUpload";
+            imageUpload.src = image;
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
@@ -151,7 +148,6 @@
 
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
 
@@ -178,10 +174,7 @@
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
-        
-        //imageUpload.src = image;
-        test.src = image;
-        var upload = document.getElementById("test");
+        var upload = document.getElementById("imageUpload");
         const prediction = await model.predict(upload, false);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
