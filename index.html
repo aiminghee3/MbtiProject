@@ -116,7 +116,6 @@
             image = reader.result;
             thumbnailElement.id = "imageUpload";
             imageUpload.src = image;
-            predict();
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
@@ -149,6 +148,7 @@
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
+        predict();
     }
 
     // run the webcam image through the image model
