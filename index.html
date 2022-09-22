@@ -105,7 +105,6 @@
           thumbnailElement = document.createElement("img");
           thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
-          predict();
         }
       
         // Show thumbnail for image files
@@ -117,6 +116,7 @@
             image = reader.result;
             thumbnailElement.id = "imageUpload";
             imageUpload.src = image;
+            predict();
           };
         } else {
           thumbnailElement.style.backgroundImage = null;
