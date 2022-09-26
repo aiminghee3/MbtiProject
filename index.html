@@ -9,7 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI 첫인상 테스트</title>
 
-    
+    <script>
+        function move() {
+            var elem = document.getElementById("label-container");
+                elem.style.width = prediction[0].probability.toFixed(2)*100 + "%";
+                elem.style.width = prediction[1].probability.toFixed(2)*100 + "%";
+                elem.style.width = prediction[2].probability.toFixed(2)*100 + "%";
+          console.log(prediction[0].probability.toFixed(2)*100);
+          }
+    </script>
 </head>
 <body>
     <!--bootstrap-->
@@ -83,9 +91,9 @@
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                move();
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
+        move();
     }
 </script>
 </body>
