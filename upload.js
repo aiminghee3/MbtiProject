@@ -83,5 +83,5 @@ function move() {
       elem.style.width = prediction[0].probability.toFixed(2)*100 + "%";
       elem.style.width = prediction[1].probability.toFixed(2)*100 + "%";
       elem.style.width = prediction[2].probability.toFixed(2)*100 + "%";
-
+console.log(prediction[0].probability.toFixed(2)*100);
 }
