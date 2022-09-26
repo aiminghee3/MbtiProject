@@ -132,3 +132,10 @@
     margin-right: auto;
   }
  
+  .d-flex {
+    display: flex!important;
+  }
+
+.flex-column {
+  flex-direction: column!important;
+  }
