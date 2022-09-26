@@ -83,16 +83,10 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
             upload.style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            upload.innerHTML = width + "%";
-            console.log(classPrediction);
+            console.log(upload.style.width);
+            // upload.innerHTML = width + "%";
         }
     }
-    
-    function move(elem, i) {
-            elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            elem.innerHTML = width + "%";
-        console.log(prediction[0].probability.toFixed(2)*100);
-        }
 </script>
 </body>
 <!--
