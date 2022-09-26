@@ -39,11 +39,7 @@
 <!--이미지 업로드-->
 <div class = "container">
     <span id="myProgress">
-        <div id="label-container" class = "d-flex flex-column justify-content-around">
-            <div class = "d-flex">
-
-            </div>
-        </div>
+        <div id="label-container"></div>
     </span>
     =============================================================================
 </div>
@@ -94,7 +90,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
             
             console.log(classPrediction);
-            console.log(prediction);
+            console.log(prediction)
             progressbar = document.getElementById("label-container");
             progressbar.childNodes[i].style.backgroundColor = '#0f0';
             progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";
