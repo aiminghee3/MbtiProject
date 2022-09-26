@@ -10,13 +10,12 @@
     <title>MBTI 첫인상 테스트</title>
 
     <script>
-        function move() {
-            var elem = document.getElementById("label-container");
-                elem.style.width = prediction[0].probability.toFixed(2)*100 + "%";
+        function move(elem) {
+                elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
                 elem.innerHTML = width + "%";
-                elem.style.width = prediction[1].probability.toFixed(2)*100 + "%";
+                elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
                 elem.innerHTML = width + "%";
-                elem.style.width = prediction[2].probability.toFixed(2)*100 + "%";
+                elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
                 elem.innerHTML = width + "%";
           console.log(prediction[0].probability.toFixed(2)*100);
           }
@@ -93,10 +92,10 @@
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-            move();
+            move(upload);
+            console.log(classPrediction);
         }
     }
 </script>
