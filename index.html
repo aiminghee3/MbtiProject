@@ -81,9 +81,9 @@
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-            
-            elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            elem.innerHTML = width + "%";
+
+            upload.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+            upload.innerHTML = width + "%";
             console.log(classPrediction);
         }
     }
