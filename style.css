@@ -90,12 +90,12 @@
   
   #label-container{
     text-align: center;
-    width: 30%;
+    width: 0%;
     height: 30px;
     background-color: green;
   }
 
   #myProgress {
     width: 100%;
-    background-color: white;
+    background-color: gray;
   }
