@@ -83,8 +83,8 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
             progressbar = document.getElementById("label-container");
-            progressbar.style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            //progressbar.innerHTML = prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+            labelContainer.childNodes[i].innerHTML.innerHTML = prediction[i].probability.toFixed(2);
         }
     }
 </script>
