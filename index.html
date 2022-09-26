@@ -83,7 +83,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
             progressbar = document.getElementById("label-container");
-            progressbar.childNodes[i].style.background = green;
+            progressbar.childNodes[i].style.backgroundColor = '#0f0';
             progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";
         }
     }
