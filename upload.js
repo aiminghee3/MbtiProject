@@ -76,3 +76,11 @@ let thumbnailElement;
 
         thumbnailElement.dataset.label = file.name;
       }
+
+var i = 0;
+function move() {
+  var elem = document.getElementById("label-container");
+  function frame() {
+      elem.style.width = prediction[i].probability.toFixed(2) + "%";
+  }
+}

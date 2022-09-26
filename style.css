@@ -91,3 +91,13 @@
   #label-container{
     text-align: center;
   }
+
+  #myProgress {
+    width: 100%;
+    background-color: grey;
+  }
+  #label-container {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }
