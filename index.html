@@ -11,11 +11,11 @@
 
     <script>
         function move(elem, i) {
-                elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+                elem.style.width = classPrediction*100 + "%";
                 elem.innerHTML = width + "%";
-                elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+                elem.style.width = classPrediction*100 + "%";
                 elem.innerHTML = width + "%";
-                elem.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+                elem.style.width = classPrediction*100 + "%";
                 elem.innerHTML = width + "%";
           console.log(prediction[0].probability.toFixed(2)*100);
           }
@@ -94,7 +94,7 @@
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-            move(upload, i);
+            move(classPrediction, i);
             console.log(classPrediction);
         }
     }
