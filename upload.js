@@ -77,7 +77,7 @@ let thumbnailElement;
         thumbnailElement.dataset.label = file.name;
       }
 
-var i = 0;
+
 function move() {
   var elem = document.getElementById("label-container");
       elem.style.width = prediction[0].probability.toFixed(2)*100 + "%";
