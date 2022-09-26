@@ -29,7 +29,7 @@
 
   .drop-zone {
     width: 50%;
-    height: 55%;
+    height: 60%;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -47,10 +47,11 @@
     margin-top:5%;
   }
 
+  
   .drop-zone-container{
     background-color: #f6f7fa;
-    width : 1000px;
-    height: 1000px;
+    width : 50%;
+    height: 100%;
     margin-left: auto; 
     margin-right: auto;
     margin-top: 5%;

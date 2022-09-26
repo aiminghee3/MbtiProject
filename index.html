@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI 첫인상 테스트</title>
+
+    
 </head>
 <body>
     <!--bootstrap-->
@@ -28,7 +30,7 @@
 <!-- Upload  -->
 <div class = "drop-zone-container">
     <div class = "height"></div>
-    <div class="drop-zone">
+    <div class="drop-zone" id = "drop-zone-id">
         <div class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</div>
         <input type="file" name="myFile" class="drop-zone__input">
         <!-- <img id = imageUpload src = ""> -->
@@ -86,7 +88,7 @@
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-
+            
             progressbar = document.getElementById("label-container");
             progressbar.childNodes[i].style.backgroundColor = '#0f0';
             progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";

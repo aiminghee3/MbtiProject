@@ -39,18 +39,20 @@ let thumbnailElement;
       /**
        * Updates the thumbnail on a drop zone element.
        *
-       * @param {HTMLElement} dropZoneElement
+       * @param {HTMLElement} dropZoneElement  
+       * 
        * @param {File} file
        */
        function updateThumbnail(dropZoneElement, file) {
-        init().then((fonction)=>{
+        init().then(()=>{
           predict();
         });
         let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-   
+
          // First time - remove the prompt
         if (dropZoneElement.querySelector(".drop-zone__prompt")) {
             dropZoneElement.querySelector(".drop-zone__prompt").remove();
+           
         }
       
         // First time - there is no thumbnail element, so lets create it
@@ -58,6 +60,7 @@ let thumbnailElement;
           thumbnailElement = document.createElement("img");
           thumbnailElement.classList.add("drop-zone__thumb");
           dropZoneElement.appendChild(thumbnailElement);
+          document.getElementsByClassName("drop-zone")[0].style.border = "0px";
         }
       
         // Show thumbnail for image files
