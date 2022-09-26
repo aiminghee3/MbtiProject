@@ -86,6 +86,7 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         var upload = document.getElementById("imageUpload");
+        var name  = document.getElementById("label-container");
         var prediction = await model.predict(upload, false);
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
@@ -102,7 +103,7 @@
             progressbar.style.width = prediction[i].probability.toFixed(2)*100 + "%";
             //progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";
             var width = prediction[i].probability.toFixed(2)*100 + "%";
-            progressbar.childNodes[i].innerHTML = prediction[i].className;
+            name.childNodes[i].innerHTML = prediction[i].className;
 
             var label = prediction[i].className;
             //labelContainer.childNodes[i].innerHTML = label + width;
