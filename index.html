@@ -8,7 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI 첫인상 테스트</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -39,7 +42,9 @@
 <!--이미지 업로드-->
 <div class = "container">
     <span id="myProgress">
-        <div id="label-container"></div>
+        <div id="label-container">
+
+        </div>
     </span>
     =============================================================================
 </div>
@@ -90,7 +95,7 @@
         var prediction = await model.predict(upload, false);
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
-        for (let i = 0; i < maxPredictions; i++) {
+        for (let i = 0; i < 5; i++) {
 
             const classPrediction = prediction[i].className+ ": " + prediction[i].probability.toFixed(2);
             //labelContainer.childNodes[i].innerHTML = classPrediction;
