@@ -30,7 +30,7 @@
 <!-- Upload  -->
 <div class = "drop-zone-container">
     <div class = "height"></div>
-    <div class="drop-zone" id = "drop-zone-id">
+    <div class="drop-zone">
         <div class="drop-zone__prompt">얼굴 사진을 올려놓거나 눌러서 업로드 하세요!</div>
         <input type="file" name="myFile" class="drop-zone__input">
         <!-- <img id = imageUpload src = ""> -->
@@ -39,7 +39,9 @@
 <!--이미지 업로드-->
 <div class = "container">
     <span id="myProgress">
-        <div id="label-container"></div>
+        <div id="label-container" class = "d-flex flex-column justify-content-around">
+
+        </div>
     </span>
     =============================================================================
 </div>
@@ -86,8 +88,12 @@
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            var element = document.getTotalClasses();
+            element.classList.add("d-flex");
+            labelContainer.appendChild(element);
+
+            // const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            // labelContainer.childNodes[i].innerHTML = classPrediction;
             
             console.log(classPrediction);
             console.log(prediction)
