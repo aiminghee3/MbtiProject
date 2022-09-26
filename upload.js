@@ -80,8 +80,8 @@ let thumbnailElement;
 var i = 0;
 function move() {
   var elem = document.getElementById("label-container");
-      elem.style.width = prediction[0].probability.toFixed(2) + "%";
-      elem.style.width = prediction[1].probability.toFixed(2) + "%";
-      elem.style.width = prediction[2].probability.toFixed(2) + "%";
+      elem.style.width = prediction[0].probability.toFixed(2)*100 + "%";
+      elem.style.width = prediction[1].probability.toFixed(2)*100 + "%";
+      elem.style.width = prediction[2].probability.toFixed(2)*100 + "%";
 
 }
