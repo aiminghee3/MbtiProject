@@ -82,9 +82,9 @@
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
-            upload.style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            console.log(upload.style.width);
-            upload.innerHTML = prediction[i].probability.toFixed(2)*100 + "%";
+            
+            labelContainer.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+            labelContainer.innerHTML = prediction[i].probability.toFixed(2)*100 + "%";
         }
     }
 </script>
