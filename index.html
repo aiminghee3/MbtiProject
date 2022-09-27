@@ -102,9 +102,9 @@
             console.log(classPrediction);
             console.log(prediction)
             // document.getElementsByClassName("drop-zone")[0].style.border
-            progressbar = document.getElementsByClassName("d-flex")[i];
-            progressbar.style.backgroundColor = '#0f0';
-            progressbar.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+            //progressbar = document.getElementsByClassName("d-flex")[i];
+            //progressbar.style.backgroundColor = '#0f0';
+            //progressbar.style.width = prediction[i].probability.toFixed(2)*100 + "%";
             
             //progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";
 
@@ -114,7 +114,7 @@
             
             var width = prediction[i].probability.toFixed(2)*100 + "%";
             var MbtiName = "<div class = 'MbtiName d-flex'>" + prediction[i].className + "</div>"
-            var MbtiBar = "<div class = 'bar-container'><div class = 'MbtiBar'></div><div class = 'd-flex content-box' style = 'width:" + width + " height:100%'></div></div>"
+            var MbtiBar = "<div class = 'bar-container'><div class = 'MbtiBar'></div><div class = 'd-flex content-box' style = 'width:" + width + "'></div></div>"
         
             labelContainer.childNodes[i].innerHTML = MbtiName + MbtiBar;
         }
