@@ -114,7 +114,7 @@
             
             var width = prediction[i].probability.toFixed(2)*100 + "%";
             var MbtiName = "<div class = 'MbtiName d-flex'>" + prediction[i].className + "</div>"
-            var MbtiBar = "<div class = 'bar-container'><div class = 'MbtiBar'></div><div class = 'd-flex content-box' style = 'width:" + width + "'></div></div>"
+            var MbtiBar = "<div class = 'bar-container'><div class = 'MbtiBar'></div><div class = 'd-flex content-box' style = 'width:" + width + " height:100%'></div></div>"
         
             labelContainer.childNodes[i].innerHTML = MbtiName + MbtiBar;
         }
