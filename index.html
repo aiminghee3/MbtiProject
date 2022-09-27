@@ -96,8 +96,8 @@
         for (let i = 0; i < maxPredictions; i++) {
 
             const classPrediction = prediction[i].className+ ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-            
+            //labelContainer.childNodes[i].innerHTML = classPrediction;
+            console.log("first" + i);
             console.log(classPrediction);
             console.log("=========================================================");
             // document.getElementsByClassName("drop-zone")[0].style.border
@@ -113,12 +113,13 @@
         
             var barWidth = prediction[i].probability.toFixed(2)*100 + "%";
             console.log(barWidth);
+            console.log("second" + i);
             var labelTitle = prediction[i].className;
             var MbtiName = "<div class='Mbti-label d-flex align-items-center'>" + labelTitle + "</div>"
             var MbtiBar = "<div class='bar-container position-relative container'><div class='MbtiName'></div><div class='d-flex justify-content-center align-items-center Mbti-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + barWidth + 
                         "%</span></div></div>"
             labelContainer.childNodes[i].innerHTML = MbtiName + MbtiBar;
-
+            console.log("last" + i);
         }
     }
 </script>
