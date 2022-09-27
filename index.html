@@ -93,11 +93,12 @@
         var prediction = await model.predict(upload, false);
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
 
             const classPrediction = prediction[i].className+ ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
             
+            console.log(classPrediction);
             console.log("=========================================================");
             // document.getElementsByClassName("drop-zone")[0].style.border
             //progressbar = document.getElementsByClassName("d-flex")[i];
