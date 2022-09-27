@@ -132,6 +132,14 @@
     margin-right: auto;
   }
 
+  .justify-content-around {
+    -ms-flex-pack: distribute!important;
+    justify-content: space-around!important;
+}
+.flex-column {
+  -ms-flex-direction: column!important;
+  flex-direction: column!important;
+}
   .MbtiName{
     position: absolute;
     top: 0;
