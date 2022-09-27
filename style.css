@@ -131,36 +131,53 @@
     margin-left: auto; 
     margin-right: auto;
   }
+
   .MbtiName{
-    width: 20%;
-    text-align: left;
-    height: 2rem;
-  }
-  .bar-container{
-    width: 100%;
-  }
-  .MbtiBar{
     position: absolute;
     top: 0;
     left: 0;
     height: 2rem;
     border-radius: 10px;
-    width: 100%;
-    background-color: rgba(117, 204, 84, 0.2);
+    background-color: rgba(117, 204, 84, 1);
   }
- .content-box{
+  .Mbti-label {
+    width: 20%;
+    text-align: left;
+    height: 2rem;
+}
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+.bar-container {
+  height: 2.7rem;
+}
+.position-relative {
+  position: relative!important;
+}
+.Mbti-bar {
   position: absolute;
   top: 0;
   left: 0;
   height: 2rem;
   border-radius: 10px;
   background-color: rgba(117, 204, 84, 1);
- }
+}
+.justify-content-center {
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+}
   .d-flex {
     display: flex!important;
     
   }
-
+  .percent-text {
+    font-size: 1rem;
+    color: #ffffff;
+}
+.d-block {
+  display: block!important;
+}
 .flex-column {
   flex-direction: column!important;
   }
