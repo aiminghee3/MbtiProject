@@ -131,6 +131,12 @@
     margin-left: auto; 
     margin-right: auto;
   }
+  .MbtiBar{
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+  }
  
   .d-flex {
     display: flex!important;

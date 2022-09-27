@@ -108,9 +108,14 @@
             //progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";
             var width = prediction[i].probability.toFixed(2)*100 + "%";
             name.childNodes[i].innerHTML = prediction[i].className;
-
             var label = prediction[i].className;
-            //labelContainer.childNodes[i].innerHTML = label + width;
+            
+            var MbtiName = "<div class = 'MbtiName'>" + prediction[i] + "</div>"
+            var MbtiBar = "<div class = 'MbtiBar'>" + prediction[i].probability.toFixed(2)*100 + "%" + "</div>"
+            progressbar = document.getElementsByClassName("MbtiBar")[i];
+            progressbar.style.backgroundColor = '#0f0';
+            progressbar.style.width = prediction[i].probability.toFixed(2)*100 + "%";
+            labelContainer.childNodes[i].innerHTML = MbtiName + MbtiBar;
         }
     }
 </script>
