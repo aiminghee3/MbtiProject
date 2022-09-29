@@ -74,7 +74,7 @@
       margin-left: auto; 
       margin-right: auto;
       margin-top: 5%;
-      margin-bottom:5%
+      margin-bottom: 15%;
     }
     .height{
       height : 25%;
@@ -162,7 +162,10 @@
   align-items: center!important;
 }
 .bar-container {
-  height: 2.7rem;
+  height: 2rem;
+  background-color: rgba(235, 166, 190, 0.2);
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 .position-relative {
   position: relative!important;
@@ -173,7 +176,7 @@
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(117, 204, 84, 1);
+  background-color: rgba(235, 166, 190, 1);
 }
 .justify-content-center {
   -ms-flex-pack: center!important;

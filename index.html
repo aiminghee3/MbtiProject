@@ -92,22 +92,6 @@
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
         for (let i = 0; i < 5; i++) {
-
-            //const classPrediction = prediction[i].className+ ": " + prediction[i].probability.toFixed(2);
-            //labelContainer.childNodes[i].innerHTML = classPrediction;
-            //console.log(classPrediction);
-            //console.log("=========================================================");
-            // document.getElementsByClassName("drop-zone")[0].style.border
-            //progressbar = document.getElementsByClassName("d-flex")[i];
-            //progressbar.style.backgroundColor = '#0f0';
-            //progressbar.style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            
-            //progressbar.childNodes[i].style.width = prediction[i].probability.toFixed(2)*100 + "%";
-            
-            //var width = prediction[i].probability.toFixed(2)*100 + "%";
-            //var MbtiName = "<div class = 'MbtiName d-flex'>" + prediction[i].className + "</div>"
-            //var MbtiBar = "<div class = 'bar-container'><div class = 'MbtiBar'></div><div class = 'd-flex content-box' style = 'width:" + width + "'></div></div>"
-        
             var barWidth = prediction[i].probability.toFixed(2)*100 + "%";
             var labelTitle = prediction[i].className;
             var MbtiName = "<div class='Mbti-label d-flex align-items-center'>" + labelTitle + "</div>"
