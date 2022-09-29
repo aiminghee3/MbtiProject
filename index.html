@@ -76,7 +76,7 @@
         maxPredictions = model.getTotalClasses();
         // append elements to the DOM
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < 5; i++) { // and class labels
+        for (let i = 0; i < 4; i++) { // and class labels
             var element = document.createElement("div");
             element.classList.add("d-flex");
             labelContainer.appendChild(element);
@@ -91,7 +91,7 @@
         var prediction = await model.predict(upload, false);
           prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
             var barWidth = prediction[i].probability.toFixed(2)*100 + "%";
             var labelTitle = prediction[i].className;
             var MbtiName = "<div class='Mbti-label d-flex align-items-center'>" + labelTitle + "</div>"
@@ -99,8 +99,18 @@
                         "</span></div></div>"
             labelContainer.childNodes[i+1].innerHTML = MbtiName + MbtiBar;
 
-            document.getElementsByClassName("bar-container")[0].style.backgroundColor="rgba(235, 166, 190, 0.2)";
-            document.getElementsByClassName("Mbti-bar")[0].style.backgroundColor="rgba(235, 166, 190, 1)";
+            document.getElementsByClassName("bar-container")[0].style.backgroundColor="#e1f6f2";
+            document.getElementsByClassName("Mbti-bar")[0].style.backgroundColor="#a6e4da";
+            
+            document.getElementsByClassName("bar-container")[1].style.backgroundColor="rgba(255, 209, 209)";
+            document.getElementsByClassName("Mbti-bar")[1].style.backgroundColor="rgba(255, 227, 225)";
+
+            document.getElementsByClassName("bar-container")[2].style.backgroundColor="#f4e6f7";
+            document.getElementsByClassName("Mbti-bar")[2].style.backgroundColor="#eacdf0";
+
+            document.getElementsByClassName("bar-container")[3].style.backgroundColor="rgb(250, 244, 183)";
+            document.getElementsByClassName("Mbti-bar")[3].style.backgroundColor="rgba(243,230,88)";
+            "rgba(243,230,88)";
 
         }
     }

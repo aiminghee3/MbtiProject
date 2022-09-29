@@ -162,7 +162,7 @@
 }
 .bar-container {
   height: 2rem;
-
+  background-color: rgba(235, 166, 190, 0.2);
   margin-bottom: 10px;
   border-radius: 10px;
 }
@@ -175,7 +175,7 @@
   left: 0;
   height: 2rem;
   border-radius: 10px;
-
+  background-color: rgba(235, 166, 190, 1);
 }
 .justify-content-center {
   -ms-flex-pack: center!important;
