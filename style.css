@@ -22,10 +22,12 @@
   html, 
   body {
       height: 100%;
+      font-family: 'Jua', sans-serif;
   } 
 
   @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
   @import url('https://fonts.googleapis.com/css?family=Roboto');
+  @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
   .drop-zone {
     width: 50%;
@@ -194,3 +196,10 @@
 .flex-column {
   flex-direction: column!important;
   }
+
+#first-name{
+  margin-top:10%;
+  font-size: 20%;
+  text-align:center;
+  font-family: 'Jua', sans-serif;
+}
