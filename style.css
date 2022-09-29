@@ -1,9 +1,16 @@
 @charset "utf-8";
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
 .navbar-brand{
     color: black;
     font-size: 150%;
     margin-left: 10%;
     margin-top: 10%;
+    text-decoration-line: none;
 }
 .bg-light{
     background-color: #ffffff;
@@ -12,23 +19,25 @@
     text-align: center;
     font-size: 200%;
     margin-top: 3%;
+    color:rgba(37,35,128,1);
 }
 .subtitle{
     text-align: center;
     font-size: 150%;
     margin-top: 3%;
 }
-
+.container-fluid{
+  margin-top: 13%;
+  margin-bottom:15%;
+}
+.title-container{
+  margin-bottom: 15%;
+}
   html, 
   body {
       height: 100%;
       font-family: 'Jua', sans-serif;
   } 
-
-  @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
-  @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-
   .drop-zone {
     width: 50%;
     height: 60%;
