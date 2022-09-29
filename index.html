@@ -38,6 +38,7 @@
         <input type="file" name="myFile" class="drop-zone__input">
         <!-- <img id = imageUpload src = ""> -->
     </div>  
+    <div id = "first-name"></div>
 </div>
 <!--이미지 업로드-->
 <div class = "container">
@@ -99,6 +100,7 @@
                         "</span></div></div>"
             labelContainer.childNodes[i+1].innerHTML = MbtiName + MbtiBar;
 
+            document.getElementById("first-name").innerHTML = labelTitle;
             switch(i){
                 case 0:
                     document.getElementsByClassName("bar-container")[0].style.backgroundColor="#e1f6f2";
