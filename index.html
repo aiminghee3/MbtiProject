@@ -98,6 +98,10 @@
             var MbtiBar = "<div class='bar-container position-relative container'><div class='MbtiName'></div><div class='d-flex justify-content-center align-items-center Mbti-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + barWidth + 
                         "</span></div></div>"
             labelContainer.childNodes[i+1].innerHTML = MbtiName + MbtiBar;
+
+            document.getElementsByClassName("bar-container")[0].style.backgroundColor="rgba(235, 166, 190, 0.2)";
+            document.getElementsByClassName("Mbti-bar")[0].style.backgroundColor="rgba(235, 166, 190, 1)";
+
         }
     }
 </script>
