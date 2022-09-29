@@ -138,7 +138,7 @@
 
   
   .container{
-    width: 100%;
+    width: 92%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -213,4 +213,7 @@
   color: #495057;
   font-family: 'Jua', sans-serif;
   font-weight: bold;
+}
+#content{
+  text-align:center;
 }
