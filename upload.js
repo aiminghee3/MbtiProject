@@ -44,7 +44,6 @@ let thumbnailElement;
        * @param {File} file
        */
        function updateThumbnail(dropZoneElement, file) {
-        
         loading();
         init().then(()=>{
           predict();
@@ -82,3 +81,14 @@ let thumbnailElement;
 
         thumbnailElement.dataset.label = file.name;
       }
+
+      var elem = document.getElementById('loadingImg');
+
+    function loading(){
+  
+        elem.style.display = 'block';
+  }
+  
+    function closeLoadingWithMask() {
+      document.getElementById("image").style.display = "none"; 
+  }
