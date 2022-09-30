@@ -127,7 +127,7 @@
   
   #label-container{
     text-align: center;
-    width: 87%;
+    width: 93%;
     background-color: white;
     margin: auto;
   }
@@ -138,9 +138,8 @@
 
   
   .container{
-    width: 92%;
+    width: 100%;
     padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -210,13 +209,14 @@
   margin-top:3%;
   font-size: 200%;
   text-align:center;
-  color: #495057;
   font-family: 'Jua', sans-serif;
   font-weight: bold;
 }
 #content{
   text-align:center;
+  font-size: 130%;
 }
 #content-container{
-  margin-bottom:30%;
+  margin-bottom:10%;
+  margin-top: 5%;
 }
