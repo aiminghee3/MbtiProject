@@ -50,8 +50,7 @@
     </span>
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-    <div id = "addthis">
-    </div>
+        <div class="addthis_inline_share_toolbox"></div>
 </div>
 
 <!--티쳐블 머신-->
@@ -67,9 +66,7 @@
   
     function closeLoadingWithMask() {
         document.getElementById("loadingImg").style.display = 'none'; 
-
-        var addthis = "<div class='addthis_inline_share_toolbox'></div>";
-        document.getElementById("addthis").innerHTML = addthis;
+        document.getElementsByClassName("addthis_inline_share_toolbox")[0].style.display = 'visible'; 
   }
 
 </script>
