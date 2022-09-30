@@ -36,7 +36,7 @@
     <div id = "first-name"></div>
     <div id = "content-container">
     <div id = "content">*사진은 절대 어디에도 저장되지 않습니다*</div>
-    <div id="load">
+    <div id="loadingImg">
         <img src="./loading.gif" alt="loading">
     </div>
     </div>
@@ -65,7 +65,7 @@
     var mask  = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
     var loadingImg = '';
 
-    loadingImg += " <img src='./loading.gif' style='position: absolute; display: block; margin: 0px auto;'/>";
+    document.getElementById(loadimgImg).innerHTML += " <img src='./loading.gif' style='position: absolute; display: block; margin: 0px auto;'/>";
  
     //화면에 레이어 추가
     $('body')
