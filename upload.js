@@ -85,12 +85,11 @@ let thumbnailElement;
 
       function loading(){
         //로딩중 이미지 표시
-        document.getElementById("loadingImg")
       $('#loadingImg').append(loadingImg);
       $('#loadingImg').show();
     }
     
     function closeLoadingWithMask() {
-        $('#mask, #loadingImg').hide();
-        $('#mask, #loadingImg').empty();  
+        $('#loadingImg').hide();
+        $('#loadingImg').empty();  
     }

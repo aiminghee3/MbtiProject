@@ -230,3 +230,11 @@
   margin-bottom:10%;
   margin-top: 5%;
 }
+#loadingImg {
+  width: 100%;
+  text-align: center;
+}
+#image {
+  width: 15%;
+  height: 5%;
+}
