@@ -83,3 +83,22 @@ let thumbnailElement;
         thumbnailElement.dataset.label = file.name;
       }
 
+      function loading(){
+        //화면에 출력할 마스크를 설정해줍니다.
+        var mask  = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
+        var loadingImg = '';
+    
+        document.getElementById("loadimgImg").innerHTML += " <img src='./loading.gif' style='position: absolute; display: block; margin: 0px auto;'/>";
+     
+        //화면에 레이어 추가
+        $('body')
+            .append(mask)
+      
+        //마스크 표시
+        $('#mask').show();
+    }
+    
+    function closeLoadingWithMask() {
+        $('#mask, #loadingImg').hide();
+        $('#mask, #loadingImg').empty();  
+    }
