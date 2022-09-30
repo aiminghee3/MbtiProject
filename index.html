@@ -37,7 +37,6 @@
     <div id = "content-container">
     <div id = "content">*사진은 절대 어디에도 저장되지 않습니다*</div>
     <div id="loadingImg">
-        <img src="./loading.gif" alt="loading">
     </div>
     </div>
 
@@ -59,7 +58,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
-<script>
+<script src="./upload.js">
     function loading(){
     //화면에 출력할 마스크를 설정해줍니다.
     var mask  = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
