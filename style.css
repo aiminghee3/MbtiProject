@@ -252,7 +252,9 @@
 .addthis_inline_share_toolbox{
   visibility: hidden;
 }
-
+#restart{
+  visibility: hidden;
+}
 
 
 button.success {
