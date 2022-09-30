@@ -82,14 +82,3 @@ let thumbnailElement;
 
         thumbnailElement.dataset.label = file.name;
       }
-
-      function loading(){
-        //로딩중 이미지 표시
-      $('#loadingImg').append(loadingImg);
-      $('#loadingImg').show();
-    }
-    
-    function closeLoadingWithMask() {
-        $('#loadingImg').hide();
-        $('#loadingImg').empty();  
-    }
