@@ -11,7 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6336892c0d26eef7"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6336892c0d26eef7">
+        document.getElementsByClassName("addthis_inline_share_toolbox")[0].style.display = 'none';
+    </script>
 </head>
 <body>
     <!--bootstrap-->
@@ -57,8 +59,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
 <script>
-    
-
     function loading(){
         var aijudge = "<div id = 'ai-judge'>AI가 당신의 MBTI를 분석중입니다.</div>"
         var elem = "<img src='./loading.gif' id = 'image'>";
@@ -67,6 +67,7 @@
   
     function closeLoadingWithMask() {
         document.getElementById("loadingImg").style.display = 'none'; 
+        document.getElementsByClassName("addthis_inline_share_toolbox")[0].style.visibility='visible';
   }
 
 </script>
