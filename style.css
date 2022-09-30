@@ -75,7 +75,7 @@
     html{
         font-size : 10px;
     }
-    /*
+    
     .drop-zone-container{
       width : 80%;
       height: 50%;
@@ -84,26 +84,9 @@
       margin-top: 5%;
       margin-bottom: 5%;
     }
-    */
+    
     .height{
       height : 25%;
-    }
-  }
-  @media (min-width: 768px){
-    .drop-zone-container{
-        max-width: 720px;
-    }
-    @media (min-width: 576px){
-    .drop-zone-container{
-        max-width: 540px;
-    }
-    @media (min-width: 768px){
-    .drop-zone-container {
-        max-width: 720px;
-    }
-    @media (min-width: 576px){
-    .drop-zone-container {
-        max-width: 540px;
     }
   }
 
