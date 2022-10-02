@@ -44,8 +44,10 @@ let thumbnailElement;
        * @param {File} file
        */
        function updateThumbnail(dropZoneElement, file) {
+        loading();
         init().then(()=>{
           predict();
+          closeLoadingWithMask();
         });
         let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
 
@@ -79,4 +81,3 @@ let thumbnailElement;
 
         thumbnailElement.dataset.label = file.name;
       }
-

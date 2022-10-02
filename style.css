@@ -3,6 +3,13 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+:root {
+  --button-color: #ffffff;
+  --button-bg-color: #0d6efd;
+  --button-hover-bg-color: #025ce2;
+}
 
 
 .navbar-brand{
@@ -39,7 +46,7 @@
       font-family: 'Jua', sans-serif;
   } 
   .drop-zone {
-    width: 50%;
+    width: 100%;
     height: 60%;
     display: flex;
     align-items: center;
@@ -52,13 +59,14 @@
     font-size: 20px;
     cursor: pointer;
     color: #cccccc;
-    border: 4px dashed #009578;
+    background-color: #f6f7fa;
+    border: 1px dashed #009578;
     border-radius: 10px;
     margin-top:5%;
   }
 
   .drop-zone-container{
-    background-color: #f6f7fa;
+  
     width : 80%;
     height: 100%;
     margin-left: auto; 
@@ -66,30 +74,40 @@
     margin-top: 5%;
     margin-bottom:10%
   }
-  .height{
-    height : 15%;
-  }
   
 
   @media screen and (max-width: 600px) {
     html{
         font-size : 10px;
     }
-    .drop-zone{
-        height: 40%;
-    }
     .drop-zone-container{
-      width : 80%;
-      height: 50%;
       margin-left: auto; 
       margin-right: auto;
       margin-top: 5%;
       margin-bottom: 5%;
     }
-    .height{
-      height : 25%;
-    }
   }
+
+  @media (min-width: 768px){
+  .drop-zone-container{
+      max-width: 720px;
+  }
+    }
+  @media (min-width: 576px){
+  .drop-zone-container{
+      max-width: 540px;
+  }
+  }
+  @media (min-width: 768px){
+  .drop-zone-container {
+      max-width: 720px;
+  }
+  }
+  @media (min-width: 576px){
+  .drop-zone-container {
+      max-width: 540px;
+  }
+}
 
   .drop-zone--over {
     border-style: solid;
@@ -100,8 +118,8 @@
   }
   
   .drop-zone__thumb {
-    width: 75%;
-    height: 100%;
+    max-height: 60%;
+    max-width: 60%;
     border-radius: 5px;
     overflow: hidden;
     background-color: #ffffff;
@@ -128,7 +146,6 @@
   #label-container{
     text-align: center;
     width: 93%;
-    background-color: white;
     margin: auto;
   }
 
@@ -219,4 +236,79 @@
 #content-container{
   margin-bottom:10%;
   margin-top: 5%;
+}
+#loadingImg {
+  width: 100%;
+  text-align: center;
+}
+#image {
+  width: 15%;
+  height: 5%;
+}
+.at-share-btn-elements {
+  text-align: center;
+  margin-top: 5%;
+}
+.addthis_inline_share_toolbox{
+  visibility: hidden;
+}
+#restart{
+  visibility: hidden;
+}
+#content-character{
+  color :#a6e4da;
+  font-size: larger;
+}
+
+
+button.success {
+  --button-bg-color: #28a745;
+  --button-hover-bg-color: #036819;
+}
+
+button:active,
+button:hover,
+button:focus {
+  background: var(--button-hover-bg-color);
+  outline: 0;
+}
+button:disabled {
+  opacity: 0.5;
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height:15%;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  background: var(--button-bg-color);
+  color: var(--button-color);
+  
+  margin: 0;
+  padding: 0.5rem 1rem;
+  
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  
+  border: none;
+  border-radius: 4px;
+  
+  display: inline-block;
+  width: auto;
+  
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  cursor: pointer;
+  
+  transition: 0.5s;
 }
