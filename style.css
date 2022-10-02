@@ -255,6 +255,9 @@
 #restart{
   visibility: hidden;
 }
+#content-character{
+  color :#009578;
+}
 
 
 button.success {
