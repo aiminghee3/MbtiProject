@@ -64,6 +64,10 @@
     border-radius: 10px;
     margin-top:5%;
   }
+  .drop-zone:hover{
+    Color: #a6e4da;
+    background-color:#e1f6f2;
+  }
 
   .drop-zone-container{
   
