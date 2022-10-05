@@ -27,6 +27,7 @@
       <div class = "title-container">
         <div class = "title">인공지능 MBTI 첫인상 테스트</div>
         <div class = "subtitle">내 첫인상은 어떤 MBTI같을까?</div>
+        <div class = "total-number">지금까지 n번 시도했어요</div>
     </div>
 <!--이미지 업로드-->
 <!-- Upload  -->
@@ -150,6 +151,7 @@
         }
         content(prediction[0].className);
     }
+
     function content(title){
         switch(title){
             case "ENFJ": 
