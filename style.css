@@ -37,7 +37,7 @@
   margin-top: 13%;
  margin-bottom: 5%;
 }
-.top-adfit-container{
+.adfit-container{
   width: 100%;
   text-align: center;
 }
@@ -267,19 +267,6 @@
   color :#a6e4da;
   font-size: larger;
   text-align-last: center;
-}
-.kakao_ad_area{
-  min-width: 100%;
-  width:100%;
-  display:none
-}
-
-.adfit__html-banner{
-  width:100%;
-  min-width: 100%;
-}
-.adfit__html-banner__inner{
-  width: 100%;
 }
 .iframe{
   width: 100%;
