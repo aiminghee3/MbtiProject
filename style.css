@@ -268,6 +268,19 @@
   font-size: larger;
   text-align-last: center;
 }
+.kakao_ad_area{
+  min-width: 100%;
+  width:100%;
+  display:none
+}
+
+.adfit__html-banner{
+  width:100%;
+  min-width: 100%;
+}
+.adfit__html-banner__inner{
+  width: 100%;
+}
 .iframe{
   width: 100%;
   min-width: 100%;
