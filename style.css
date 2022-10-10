@@ -264,6 +264,12 @@
   font-size: larger;
   text-align-last: center;
 }
+.link_ad{
+  width: 100%;
+}
+.a{
+  width:100%;
+}
 
 
 button.success {
