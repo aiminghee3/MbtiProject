@@ -35,7 +35,10 @@
 }
 .container-fluid{
   margin-top: 13%;
-  
+ 
+}
+.top-adfit-container{
+  height:250px;
 }
 .title-container{
   margin-bottom: 15%;
