@@ -269,8 +269,15 @@
 }
 .adfit__html-banner{
   width:100%;
+  min-width: 100%;
 }
-
+.adfit__html-banner__inner{
+  width: 100%;
+}
+.iframe{
+  width: 100%;
+  min-width: 100%;
+}
 
 button.success {
   --button-bg-color: #28a745;
