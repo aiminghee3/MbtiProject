@@ -113,6 +113,11 @@
   }
 }
 
+.kakao_ad_area{
+  margin-left: auto; 
+  margin-right: auto;
+}
+
   .drop-zone--over {
     border-style: solid;
   }
