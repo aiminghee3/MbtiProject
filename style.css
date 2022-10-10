@@ -38,7 +38,9 @@
  
 }
 .top-adfit-container{
-  height:250px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 .title-container{
   margin-bottom: 15%;
